@@ -1,5 +1,8 @@
 import Image from 'next/image'
 
+import Button from '@/components/Button'
+import TextInput from '@/components/TextInput'
+
 export default function Page() {
   return (
     <div className='bg-[#317cc2] flex flex-col justify-center items-center gap-12 pb-10'>
@@ -11,12 +14,12 @@ export default function Page() {
         platform you sell on, and enhances it to add a unified brand voice, all in an instant.
       </h2>
       <div className='mt-2 flex justify-center items-center gap-2'>
-        <input
-          type='text'
+        <TextInput
+          type='email'
           placeholder='Your email'
-          className='input input-bordered w-full max-w-xs min-w-[350px] rounded-3xl bg-[#317cc2] border-gray-400'
+          classes='max-w-xs min-w-[350px] rounded-3xl bg-[#317cc2] border-gray-400'
         />
-        <button className='btn btn-accent text-white rounded-3xl min-w-[120px]'>Sign up</button>
+        <Button text='Sign up' className='rounded-3xl min-w-[120px]' />
       </div>
       <p className='mt-[-1rem] text-slate-400 font-normal text-xl text-center max-w-xl leading-[22px] tracking-[-0.2px]'>
         Sign up to trial our beta. Email tina@govista.io for questions

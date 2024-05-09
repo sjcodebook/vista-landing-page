@@ -31,7 +31,7 @@ export default function Page() {
         Vista&apos;s AI engine is designed to save months of time spent optimizing your product
         description data. Product applications are endless, but here are a few
       </h2>
-      <div className='flex justify-center items-center gap-4 max-w-[1170px]'>
+      <div className='flex justify-center items-center gap-8 max-w-[1170px]'>
         {features.map((feature, index) => (
           <div
             key={index}

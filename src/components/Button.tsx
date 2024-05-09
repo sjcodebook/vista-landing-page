@@ -1,3 +1,5 @@
-export default function Page() {
-  return <button className='btn btn-accent text-white rounded-3xl min-w-[120px]'>Sign up</button>
+import { cn } from '@/lib/utils'
+
+export default function Page({ text = '', className = '' }: { text: string; className?: string }) {
+  return <button className={cn('btn btn-accent text-white', className)}>{text}</button>
 }
