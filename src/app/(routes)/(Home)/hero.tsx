@@ -1,9 +1,23 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
 
+import { createSheetData } from '@/actions/google'
+
 export default function Page() {
+  const [email, setEmail] = useState('')
+
+  const handleOnAddSheetDataClick = async () => {
+    console.log('Adding sheet data=====')
+    console.log(email)
+    const response = await createSheetData(JSON.stringify({ values: [[email]] }))
+    console.log(response)
+  }
+
   return (
     <div className='bg-[#317cc2] flex flex-col justify-center items-center gap-12 pb-10'>
       <h1 className='font-bold text-5xl lg:text-7xl tracking-[-1px] text-center max-w-3xl leading-[56px] lg:leading-[86px] px-1 lg:p-0'>
@@ -18,8 +32,14 @@ export default function Page() {
           type='email'
           placeholder='Your email'
           classes='max-w-xs min-w-[350px] rounded-3xl bg-[#317cc2] border-gray-400'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <Button text='Sign up' className='rounded-3xl min-w-[120px]' />
+        <Button
+          text='Sign up'
+          className='rounded-3xl min-w-[120px]'
+          onClick={handleOnAddSheetDataClick}
+        />
       </div>
       <p className='mt-[-1rem] text-slate-400 font-normal text-xl text-center max-w-xl leading-[22px] tracking-[-0.2px] px-5 lg:px-0'>
         Sign up to trial our beta. Email tina@govista.io for questions
