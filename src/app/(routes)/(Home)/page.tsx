@@ -2,6 +2,7 @@ import Hero from './hero'
 import UseCase from './useCase'
 import Explain from './explain'
 import USP from './usp'
+import FAQS from './faqs'
 
 export default function Page() {
   return (
@@ -10,6 +11,7 @@ export default function Page() {
       <UseCase />
       <Explain />
       <USP />
+      <FAQS />
     </main>
   )
 }
