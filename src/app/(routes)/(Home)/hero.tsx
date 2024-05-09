@@ -6,16 +6,33 @@ import Image from 'next/image'
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
 
+import { validateEmail } from '@/lib/utils'
+
 import { createSheetData } from '@/actions/google'
 
 export default function Page() {
   const [email, setEmail] = useState('')
+  const [loading, setIsLoading] = useState(false)
 
   const handleOnAddSheetDataClick = async () => {
-    console.log('Adding sheet data=====')
-    console.log(email)
-    const response = await createSheetData(JSON.stringify({ values: [[email]] }))
-    console.log(response)
+    try {
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email')
+        return
+      }
+      setIsLoading(true)
+      console.log('Adding sheet data=====')
+      console.log(email)
+      const response = await createSheetData(JSON.stringify({ values: [[email]] }))
+      console.log(response)
+      alert('Email Submitted successfully')
+      setEmail('')
+      setIsLoading(false)
+    } catch (error) {
+      setIsLoading(false)
+      console.error(error)
+      alert('Something went wrong')
+    }
   }
 
   return (
@@ -27,20 +44,24 @@ export default function Page() {
         Vista&apos;s AI engine cleans up your PIES data, transforms it to fit best practices for any
         platform you sell on, and enhances it to add a unified brand voice, all in an instant.
       </h2>
-      <div className='mt-2 flex flex-col lg:flex-row justify-center items-center lg:gap-2 gap-6'>
-        <TextInput
-          type='email'
-          placeholder='Your email'
-          classes='max-w-xs min-w-[350px] rounded-3xl bg-[#317cc2] border-gray-400'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Button
-          text='Sign up'
-          className='rounded-3xl min-w-[120px]'
-          onClick={handleOnAddSheetDataClick}
-        />
-      </div>
+      {loading ? (
+        <span className='loading loading-dots loading-lg'></span>
+      ) : (
+        <div className='mt-2 flex flex-col lg:flex-row justify-center items-center lg:gap-2 gap-6'>
+          <TextInput
+            type='email'
+            placeholder='Your email'
+            classes='max-w-xs min-w-[350px] rounded-3xl bg-[#317cc2] border-gray-400'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Button
+            text='Sign up'
+            className='rounded-3xl min-w-[120px]'
+            onClick={handleOnAddSheetDataClick}
+          />
+        </div>
+      )}
       <p className='mt-[-1rem] text-slate-400 font-normal text-xl text-center max-w-xl leading-[22px] tracking-[-0.2px] px-5 lg:px-0'>
         Sign up to trial our beta. Email tina@govista.io for questions
       </p>
