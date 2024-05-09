@@ -30,10 +30,10 @@ const faqs = [
 export default function Page() {
   return (
     <div className='pb-28 flex flex-col justify-center items-center'>
-      <h1 className='mt-20 font-bold text-[42px] tracking-[-0.4px] text-center max-w-3xl leading-[52px] text-[#1E0E62]'>
+      <h1 className='mt-20 font-bold text-[42px] tracking-[-0.4px] text-center max-w-3xl leading-[52px] text-[#1E0E62] px-4 lg:px-0'>
         Frequently asked questions, answered by our AI engine
       </h1>
-      <div className='flex flex-col justify-center items-center gap-10 mt-20 max-w-5xl'>
+      <div className='flex flex-col justify-center items-center gap-10 mt-20 max-w-5xl px-4 lg:px-0'>
         <div className='grid lg:grid-cols-2 md:grid-cols-1 gap-10'>
           {faqs.map((faq) => (
             <div key={faq.ques} className='flex flex-col justify-start items-start gap-5'>

@@ -24,7 +24,7 @@ export default function Page() {
       <h1 className='mt-10 font-bold text-[42px] tracking-[-0.4px] text-center max-w-3xl leading-[52px] text-[#1E0E62]'>
         How does Vista work?
       </h1>
-      <ul className='mt-16 timeline timeline-snap-icon timeline-compact timeline-vertical max-w-[700px]'>
+      <ul className='mt-16 timeline timeline-snap-icon timeline-compact timeline-vertical max-w-[700px] px-4 lg:px-0'>
         {timeline.map((item, index) => (
           <li key={item.heading}>
             {index !== 0 && <hr />}

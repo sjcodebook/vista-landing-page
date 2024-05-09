@@ -24,14 +24,14 @@ const features = [
 export default function Page() {
   return (
     <div className='flex flex-col justify-center items-center gap-8 pb-10'>
-      <h1 className='mt-20 font-bold text-[42px] tracking-[-0.4px] text-center max-w-3xl leading-[52px] text-[#1E0E62]'>
+      <h1 className='mt-20 font-bold text-[42px] tracking-[-0.4px] text-center max-w-3xl leading-[52px] text-[#1E0E62] px-2 lg:p-0'>
         What can I do with Vista?
       </h1>
-      <h2 className='font-medium text-2xl text-center leading-[32px] text-[#15143966] max-w-5xl'>
+      <h2 className='font-medium text-2xl text-center leading-[32px] text-[#15143966] max-w-5xl px-4 lg:p-0'>
         Vista&apos;s AI engine is designed to save months of time spent optimizing your product
         description data. Product applications are endless, but here are a few
       </h2>
-      <div className='flex justify-center items-center gap-8 max-w-[1170px]'>
+      <div className='flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-8 max-w-[1170px]'>
         {features.map((feature, index) => (
           <div
             key={index}
