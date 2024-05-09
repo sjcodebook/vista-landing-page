@@ -1,6 +1,7 @@
 import Hero from './hero'
 import UseCase from './useCase'
 import Explain from './explain'
+import USP from './usp'
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
       <Hero />
       <UseCase />
       <Explain />
+      <USP />
     </main>
   )
 }

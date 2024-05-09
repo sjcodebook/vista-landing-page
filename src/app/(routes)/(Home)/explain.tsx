@@ -33,13 +33,13 @@ export default function Page() {
             </div>
             <div className='timeline-end mt-4 mb-10 ml-8'>
               <h2 className='text-[#1E0E62] font-medium text-[18px] leading-7'>{item.heading}</h2>
-              <p className='mt-5 text-[#15143966] font-normal text-[16px] leading-6'>
+              <span className='mt-5 text-[#15143966] font-normal text-[16px] leading-6'>
                 {item.subheading.split('\n').map((line, i) => (
                   <p key={i} className='mt-2'>
                     {line}
                   </p>
                 ))}
-              </p>
+              </span>
             </div>
             {index !== timeline.length - 1 && <hr />}
           </li>
