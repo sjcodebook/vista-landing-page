@@ -85,7 +85,7 @@ export default function Page() {
           <TextInput
             type='email'
             placeholder='Your email'
-            classes='max-w-xs min-w-[350px] rounded-3xl bg-[#317cc2] border-gray-400'
+            classes='max-w-xs min-w-[350px] rounded-3xl text-black border-gray-400'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
