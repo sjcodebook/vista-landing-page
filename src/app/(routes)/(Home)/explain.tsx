@@ -79,7 +79,7 @@ export default function Page() {
         ))}
       </ul>
       {loading ? (
-        <span className='loading loading-dots loading-lg'></span>
+        <span className='loading loading-dots loading-lg text-black'></span>
       ) : (
         <div className='mt-2 flex flex-col lg:flex-row justify-center items-center lg:gap-2 gap-6'>
           <TextInput
